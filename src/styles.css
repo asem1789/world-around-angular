@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+:root, [data-color-mode="ligth"] {
+  --forground-primary: #000000;
+  --forground-secondary: gray;
+
+  --background-primary: #ffffff;
+  --background-secondary: #f0f0f0;
+}
+
+[data-color-mode="dark"] {
+  --forground-primary: #ffffff;
+  --forground-secondary: gray;
+
+  --background-primary: #2b3743;
+  --background-secondary: #212e37;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
