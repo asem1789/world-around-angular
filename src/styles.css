@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-:root, [data-color-mode="ligth"] {
+:root,
+[data-color-mode="ligth"] {
   --forground-primary: #000000;
   --forground-secondary: gray;
 
@@ -21,5 +22,18 @@
   box-sizing: border-box;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* General Styles */
+.max-row {
+  max-width: 1366px;
+  margin: 0 auto;
+}
