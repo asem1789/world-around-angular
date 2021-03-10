@@ -1,0 +1,79 @@
+.mode-btn {
+  border-radius: 50px;
+  border: 1px solid transparent;
+  background: 0;
+  cursor: pointer;
+  width: 80px;
+  height: 40px;
+  position: relative;
+  outline: none;
+  overflow: hidden;
+}
+
+.border-dark {
+  border: 2px solid #212e37;
+}
+
+.border-light {
+  border: 2px solid #fff ;
+}
+
+.icon-box {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.icon-box-sun {
+  left: 2px;
+}
+
+.icon-box-moon {
+  right: 2px;
+}
+
+.icon-sun {
+  color: #fff !important;
+}
+
+.icon-moon {
+  color: #2b3743;
+}
+
+.border-light .icon-sun {
+  color: gray  !important;
+}
+
+.border-dark .icon-moon {
+  color: gray  !important;
+}
+
+
+.bg-icon {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bg-icon-dark {
+  left: 2px;
+  background-color: #2b3743;
+}
+
+.bg-icon-light {
+  background-color: #fff;
+  right: 2px;
+}
+
+

@@ -13,6 +13,10 @@
   padding: 20px 70px;
 }
 
+.logo {
+  color: var(--forground-primary);
+}
+
 .nav-mid {
   padding: 15px 40px;
   font-size: 16px;

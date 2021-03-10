@@ -1,0 +1,16 @@
+<button
+  class="mode-btn"
+  [ngClass]="{ 'border-light': isDark, 'border-dark': !isDark }"
+  (click)="toggleTheme()"
+>
+  <div class="icon-box icon-box-sun">
+    <mat-icon class="icon-mode icon-sun" >light_mode_outline</mat-icon>
+  </div>
+  <div class="icon-box icon-box-moon">
+    <mat-icon class="icon-mode icon-moon">dark_mode_outline</mat-icon>
+  </div>
+  <div
+    class="bg-icon"
+    [ngClass]="{ 'bg-icon-light': isDark, 'bg-icon-dark': !isDark }"
+  ></div>
+</button>
