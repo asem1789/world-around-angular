@@ -1,0 +1,29 @@
+.nav {
+  background-color: var(--background-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.26);
+}
+
+.nav-content {
+  display: flex;
+  font-size: 18px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 20px 70px;
+}
+
+.nav-mid {
+  padding: 15px 40px;
+  font-size: 16px;
+}
+
+.nav-small {
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
+
+
+
+
