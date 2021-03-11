@@ -1,0 +1,29 @@
+.input-wrapper {
+  position: relative;
+}
+
+.input-search {
+  width: 100%;
+  height: 40px;
+  padding-left: 60px;
+  border: 0;
+  background-color: var(--background-primary);
+  outline: none;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  color: var(--forground-primary)
+
+}
+
+.input-search::placeholder {
+  color: var(--forground-secondary);
+}
+
+.icon-search {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--forground-secondary);
+}

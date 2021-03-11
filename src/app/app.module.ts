@@ -9,13 +9,19 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModeIconComponent } from './components/mode-icon/mode-icon.component';
 import { MaterialModule } from './material/material.module';
+import { InputComponent } from './components/input/input.component';
+import { SelectComponent } from './components/select/select.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomePageComponent,
-    ModeIconComponent
+    ModeIconComponent,
+    InputComponent,
+    SelectComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
