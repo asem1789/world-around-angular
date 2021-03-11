@@ -1,0 +1,24 @@
+<div (click)="toggleClick()" class="select-wrapper">
+  <label class="select-lable">
+    <input
+      class="select-input"
+      type="text"
+      [value]="selectedRegion"
+      readonly
+      placeholder="Filter By Regions"
+    />
+    <mat-icon class="select-icon">keyboard_arrow_down</mat-icon>
+  </label>
+  <ul *ngIf="isSelected" class="list">
+    <li
+      (click)="onChooseValue(f)"
+      ngModule
+      #f
+      class="item"
+      *ngFor="let region of regions"
+      attr.data-value="{{ region.value }}"
+    >
+      {{ region.text }}
+    </li>
+  </ul>
+</div>
