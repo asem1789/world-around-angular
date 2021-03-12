@@ -12,6 +12,7 @@ import { MaterialModule } from './material/material.module';
 import { InputComponent } from './components/input/input.component';
 import { SelectComponent } from './components/select/select.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { CardCountryComponent } from './components/card-country/card-country.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     ModeIconComponent,
     InputComponent,
     SelectComponent,
-    LayoutComponent
+    LayoutComponent,
+    CardCountryComponent
   ],
   imports: [
     BrowserModule,
