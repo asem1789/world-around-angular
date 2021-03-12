@@ -13,6 +13,7 @@ import { InputComponent } from './components/input/input.component';
 import { SelectComponent } from './components/select/select.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CardCountryComponent } from './components/card-country/card-country.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CardCountryComponent } from './components/card-country/card-country.com
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
