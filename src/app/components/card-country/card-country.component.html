@@ -1,12 +1,19 @@
 <div class="card">
-  <img class="img" src="https://restcountries.eu/data/pse.svg" alt="flag image" >
+  <img class="img" src="{{ country.flag }}" alt="flag image" />
   <div class="card-content">
-    <h2 class="card-title">Palestine</h2>
+    <h2 class="card-title">{{ country.name }}</h2>
     <div class="card-info">
       <ul class="list">
-        <li class="item-info"><strong class="sub-title" >Population:</strong> 8682467</li>
-        <li class="item-info"><strong class="sub-title" >Region:</strong> Isia</li>
-        <li class="item-info"><strong class="sub-title" >Capital:</strong> Al-Quds</li>
+        <li class="item-info">
+          <span class="sub-title">Population:</span>
+          {{ country.population }}
+        </li>
+        <li class="item-info">
+          <span class="sub-title">Region:</span> {{ country.region }}
+        </li>
+        <li class="item-info">
+          <span class="sub-title">Capital:</span> {{ country.capital }}
+        </li>
       </ul>
     </div>
   </div>

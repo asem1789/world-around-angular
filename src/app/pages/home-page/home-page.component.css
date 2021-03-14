@@ -1,19 +1,29 @@
 .page-home {
-  padding: 30px 66px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.home-search {
+  margin-bottom: 35px;
+}
+
+app-input {
+  position: relative;
 }
 
 .cards-list {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; */
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 app-card-country {
-  margin-bottom: 50px;
-  width: 320px;
-  height: 400px;
+  overflow: hidden;
+  height: 350px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   overflow: hidden;
 }
+
 
 
