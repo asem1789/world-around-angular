@@ -1,13 +1,24 @@
-<div class="page-home max-row">
-  <div style="margin-bottom: 40px">
-    <div style="margin-bottom: 30px">
-      <app-input></app-input>
-    </div>
-    <div>
-      <app-select></app-select>
-    </div>
+<div
+  class="page-home max-row"
+  ngClass.xs="padding-x-1"
+  ngClass.sm="padding-x-2"
+  ngClass.gt-sm="padding-x-3"
+>
+  <div
+    ngClass.gt-sm="card-header-row"
+    ngClass.lt-md="card-header-col"
+    class="home-search"
+  >
+    <app-input class="control search"></app-input>
+    <app-select class="control select"></app-select>
   </div>
-  <div class="cards-list">
-    <app-card-country ></app-card-country>
+
+  <div
+    class="cards-list"
+  >
+    <app-card-country
+      [country]="country"
+      *ngFor="let country of countries$"
+    ></app-card-country>
   </div>
 </div>

@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  styleExp: string = '10px 70px';
   constructor() { }
 
   ngOnInit(): void {
