@@ -8,8 +8,9 @@ import { CountryInfo } from '../models';
   providedIn: 'root',
 })
 export class CountriesService {
-  constructor(private http: HttpClient) {}
 
+  constructor(private http: HttpClient) {}
+  
   getAllCountries() {
     return this.http.get('https://restcountries.eu/rest/v2/all').pipe(
       map((response: any) => {
@@ -22,6 +23,12 @@ export class CountriesService {
 
   // make it enum type
   getCountriesByRegion(region: string) {
-    return this.http.get(`https://restcountries.eu/rest/v2/region/${region}`)
+    return this.http.get(`https://restcountries.eu/rest/v2/region/${region}`).pipe(
+      map((res: any)=> {
+        return res.map((country: any)=> {
+          return new CountryInfo(country);
+        })
+      })
+    )
   }
 }

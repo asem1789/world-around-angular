@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Regions } from 'src/app/models';
 
 @Component({
@@ -15,10 +15,13 @@ export class SelectComponent implements OnInit {
     {id: 5, value: 'oceania', text: 'Oceania'},
   ]
   isSelected: boolean = false;
-  selectedRegion: string | null  = null;
+  selectedRegion: string = "" ;
+  @Output() region = new EventEmitter();
 
 
-  constructor() { }
+  constructor() { 
+    this.selectedRegion = ""
+  }
 
   ngOnInit(): void {
   }
@@ -27,8 +30,10 @@ export class SelectComponent implements OnInit {
     this.isSelected = !this.isSelected;
   }
 
-  onChooseValue(form: HTMLLIElement): void {
-    this.selectedRegion = form.textContent;
+  onChooseValue(from: HTMLLIElement): void {
+    const value = from.textContent || "";
+    this.selectedRegion = value.trim();
+    this.region.emit(this.selectedRegion);
   }
 
 }

@@ -9,16 +9,17 @@
     ngClass.lt-md="card-header-col"
     class="home-search"
   >
-    <app-input class="control search"></app-input>
-    <app-select class="control select"></app-select>
+    <app-input (searchInput)="searchCountry($event)" class="control search"></app-input>
+    <app-select (region)="filterByRegion($event)" class="control select"></app-select>
   </div>
 
   <div
     class="cards-list"
   >
+ 
     <app-card-country
       [country]="country"
-      *ngFor="let country of countries$"
+      *ngFor="let country of copyCountries"
     ></app-card-country>
   </div>
 </div>
