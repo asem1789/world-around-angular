@@ -23,3 +23,9 @@
   transform: translateY(-50%);
   color: var(--forground-secondary);
 }
+
+@media (max-width: 950px) {
+  .input-search {
+    height: 50px;
+  }
+}
