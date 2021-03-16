@@ -50,3 +50,9 @@
   position: absolute;
   width: 100%;
 }
+
+@media (max-width: 950px) {
+  .select-input {
+    height: 50px;
+  }
+}
