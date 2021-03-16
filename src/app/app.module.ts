@@ -14,6 +14,8 @@ import { SelectComponent } from './components/select/select.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CardCountryComponent } from './components/card-country/card-country.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchByNamePipe } from './shared/pipes';
+import { HighlightTextDirective } from './shared/directives';
 
 
 
@@ -26,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     InputComponent,
     SelectComponent,
     LayoutComponent,
-    CardCountryComponent
+    CardCountryComponent,
+    SearchByNamePipe,
+    HighlightTextDirective
   ],
   imports: [
     BrowserModule,

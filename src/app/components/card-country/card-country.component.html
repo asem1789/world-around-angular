@@ -1,7 +1,15 @@
 <div class="card">
   <img class="img" src="{{ country.flag }}" alt="flag image" />
   <div class="card-content">
-    <h2 class="card-title">{{ country.name }}</h2>
+    <h2
+      class="card-title"
+      highlightText
+      [searchText]="countryInput"
+      [content]="country.name"
+      [classes]="'highlight-text'"
+    >
+      {{ country.name }}
+    </h2>
     <div class="card-info">
       <ul class="list">
         <li class="item-info">
