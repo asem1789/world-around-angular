@@ -9,14 +9,14 @@ import { CountriesService } from 'src/app/services/countries.service';
 })
 export class HomePageComponent implements OnInit {
   countries$: CountryInfo[] = [];
-  copyCountries: CountryInfo[] = [];
+  searchText: string = '';
 
   constructor(private countriesService: CountriesService) {}
 
   ngOnInit(): void {
     this.countriesService.getAllCountries().subscribe((res: CountryInfo[]) => {
       this.countries$ = res;
-      this.copyCountries = res;
+      // this.copyCountries = res;
       /*
        * try to collect Palestine and Israeli occupation in only array
        * in order handle them esaily
@@ -25,20 +25,8 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  // using pipe for searching
-  searchCountry(value: string) {
-    const filterSearch: CountryInfo[] = [];
-    this.countries$.forEach((country) => {
-      const countrySmall = country.name.toLowerCase();
-      const resetValue = value.toLowerCase().trim();
-      if (countrySmall.indexOf(resetValue) === -1) {
-        return;
-      }
-
-      filterSearch.push(country);
-    });
-
-    this.copyCountries = filterSearch;
+  searchingCountry(value: string) {
+    this.searchText = value;
   }
 
   filterByRegion(value: string) {
@@ -46,7 +34,7 @@ export class HomePageComponent implements OnInit {
       .getCountriesByRegion(value)
       .subscribe((res: CountryInfo[]) => {
         this.countries$ = res;
-        this.copyCountries = res;
+        // this.copyCountries = res;
       });
   }
 }

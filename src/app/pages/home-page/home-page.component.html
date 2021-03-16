@@ -9,7 +9,7 @@
     ngClass.lt-md="card-header-col"
     class="home-search"
   >
-    <app-input (searchInput)="searchCountry($event)" class="control search"></app-input>
+    <app-input (searchInput)="searchingCountry($event)" class="control search"></app-input>
     <app-select (region)="filterByRegion($event)" class="control select"></app-select>
   </div>
 
@@ -18,8 +18,9 @@
   >
  
     <app-card-country
-      [country]="country"
-      *ngFor="let country of copyCountries"
+      [country]="country"      
+      *ngFor="let country of countries$ | searchByName: searchText"
+      [countryInput]="searchText"
     ></app-card-country>
     <!-- these three div to fix style of last row if it's not have full cards -->
     <div class="hidden"></div>
