@@ -1,4 +1,4 @@
-<div class="card">
+<a class="card" [routerLink]="['/countries', country.name , 'detail']">
   <img class="img" src="{{ country.flag }}" alt="flag image" />
   <div class="card-content">
     <h2
@@ -25,4 +25,4 @@
       </ul>
     </div>
   </div>
-</div>
+</a>
