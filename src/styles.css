@@ -45,6 +45,11 @@ body {
   margin: 0 auto;
 }
 
+.highlight-text {
+  font-weight: 600;
+  color: #f00;
+}
+
 /* ======================================= */
 /* MediaQuery of Screen */
 /* ======================================= */

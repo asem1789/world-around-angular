@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CountryInfo } from 'src/app/models';
 
 @Component({
@@ -6,13 +6,10 @@ import { CountryInfo } from 'src/app/models';
   templateUrl: './card-country.component.html',
   styleUrls: ['./card-country.component.css']
 })
-export class CardCountryComponent implements OnInit {
+export class CardCountryComponent {
   @Input() country!: CountryInfo;
+  @Input() countryInput: string = "";
 
   constructor() { }
-
-  ngOnInit(): void {
-    // console.log(this.country);
-  }
 
 }
