@@ -15,9 +15,8 @@
 
   <div
     class="cards-list"
-  >
- 
-    <app-card-country
+  >    
+    <app-card-country      
       [country]="country"      
       *ngFor="let country of countries$ | searchByName: searchText"
       [countryInput]="searchText"

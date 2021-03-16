@@ -17,15 +17,16 @@ app-input {
   justify-content: center;
 }
 
+app-card-country {
+  height: 350px;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.08);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 app-card-country, 
 .hidden {
   overflow: hidden;
-  height: 350px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  overflow: hidden;
-  align-self: flex-start;
-  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.08);
 }
 
 .hidden {
