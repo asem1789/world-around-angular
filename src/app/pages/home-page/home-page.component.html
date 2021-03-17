@@ -9,8 +9,8 @@
     ngClass.lt-md="card-header-col"
     class="home-search"
   >
-    <app-input (searchInput)="searchingCountry($event)" class="control search"></app-input>
-    <app-select (region)="filterByRegion($event)" class="control select"></app-select>
+    <app-input (searchInput)="onSearchingCountry($event)" class="control search"></app-input>
+    <app-select (region)="onFilterByRegion($event)" [searchRegion]="searchRegion" class="control select"></app-select>
   </div>
 
   <div
