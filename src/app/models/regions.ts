@@ -1,4 +1,4 @@
-export interface Regions {
+export interface RegionsInfo {
   id: number;
   value: string;
   text: string;

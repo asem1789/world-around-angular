@@ -6,8 +6,8 @@ import { NotFoundComponent } from './pages/not-found-page/not-found.component';
 
 const routes: Routes = [
   // {path: "", component: HomePageComponent},
-  {path: "", redirectTo: "/home", pathMatch: 'full'},
-  {path: "home", component: HomePageComponent},
+  {path: "", redirectTo: "/countries", pathMatch: 'full'},
+  {path: "countries", component: HomePageComponent},
   {path: "countries/:countryName/detail", component: DetailPageComponent},
   {path: "**", component: NotFoundComponent},
 ];
