@@ -72,3 +72,8 @@ mat-spinner {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.info-pal {
+  text-align: left;
+  font-size: 18px;
+}

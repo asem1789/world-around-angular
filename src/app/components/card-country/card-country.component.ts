@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CountryInfo } from 'src/app/models';
 
 @Component({
@@ -6,10 +6,20 @@ import { CountryInfo } from 'src/app/models';
   templateUrl: './card-country.component.html',
   styleUrls: ['./card-country.component.css']
 })
-export class CardCountryComponent {
+export class CardCountryComponent implements OnInit {
   @Input() country!: CountryInfo;
   @Input() countryInput: string = "";
+  isSpam: boolean = false;
 
   constructor() { }
+
+  ngOnInit() {
+    if(this.country.name === 'Israel'){
+      this.isSpam = true;
+    }else {
+      this.isSpam = false;
+    }
+    
+  }
 
 }

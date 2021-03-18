@@ -6,9 +6,6 @@ import { Injectable } from '@angular/core';
 export class ThemeService {
   private activeMode: string = 'light';
 
-  getActiveMode() {
-    return this.activeMode;
-  }
 
   isDarkMode() {
     return this.activeMode === 'dark';
@@ -16,6 +13,7 @@ export class ThemeService {
 
   setActiveMode(mode: string): void {
     this.activeMode = mode;
+    localStorage.setItem('active-mode', `${mode}`)
     document.documentElement.setAttribute('data-color-mode', this.activeMode);
   }
 
