@@ -8,11 +8,12 @@ import { RegionsInfo } from 'src/app/models';
 })
 export class SelectComponent implements OnInit {
   regions: RegionsInfo[] = [
-    { id: 1, value: 'africa', text:  'Africa' },
-    { id: 2, value: 'americas', text: 'Americas' },
-    { id: 3, value: 'asia', text: 'Asia' },
-    { id: 4, value: 'europe', text: 'Europe' },
-    { id: 5, value: 'oceania', text: 'Oceania' },
+    { id: 1, value: 'all', text:  'All' },
+    { id: 2, value: 'africa', text:  'Africa' },
+    { id: 3, value: 'americas', text: 'Americas' },
+    { id: 4, value: 'asia', text: 'Asia' },
+    { id: 5, value: 'europe', text: 'Europe' },
+    { id: 6, value: 'oceania', text: 'Oceania' },
   ];
   isSelected: boolean = false;
   selectedRegion: string = '';

@@ -9,6 +9,8 @@
 
   --color-gray-1: #999;
   --color-gray-2: #333;
+  
+  --color-spinner: #2c3e50;
 }
 
 [data-color-mode="dark"] {
@@ -20,6 +22,8 @@
 
   --color-gray-1: rgb(214, 211, 211);
   --color-gray-2: #f0f0f0;
+
+  --color-spinner: #ffffff;
 }
 
 *,
@@ -248,3 +252,5 @@ body {
     height: 150px !important;
   }
 }
+
+
