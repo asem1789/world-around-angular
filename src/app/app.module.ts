@@ -16,6 +16,9 @@ import { CardCountryComponent } from './components/card-country/card-country.com
 import { HttpClientModule } from '@angular/common/http';
 import { SearchByNamePipe } from './shared/pipes';
 import { HighlightTextDirective } from './shared/directives';
+import { ButtonComponent } from './components/button/button.component';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -30,10 +33,13 @@ import { HighlightTextDirective } from './shared/directives';
     LayoutComponent,
     CardCountryComponent,
     SearchByNamePipe,
-    HighlightTextDirective
+    HighlightTextDirective,
+    DetailPageComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -41,6 +47,6 @@ import { HighlightTextDirective } from './shared/directives';
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

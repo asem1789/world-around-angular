@@ -1,1 +1,71 @@
-<p>detail-page works!</p>
+<div
+  class="detail-page max-row"
+  ngClass.xs="padding-x-1"
+  ngClass.sm="padding-x-2"
+  ngClass.gt-sm="padding-x-3"
+>
+  <div class="detail-header">
+    <app-button
+      [historyRoutes]="historyRoute"
+      [content]="'Back'"
+      [icon]="'keyboard_backspace'"
+      [isBack]="true"
+    ></app-button>
+  </div>
+  <div class="detail-content">
+    <div class="detail-flag-box">
+      <img class="flag" src="{{ country?.flag }}" alt="flag country" />
+    </div>
+    <div class="detail-info">
+      <h2 class="detail-title">{{ country?.name }}</h2>
+      <div class="lists">
+        <ul class="list list-right">
+          <li class="item-info">
+            <span class="sub-title">Native Name:</span>
+            {{ country?.nativeName }}
+          </li>
+          <li class="item-info">
+            <span class="sub-title">Capital:</span>
+            {{ country?.capital }}
+          </li>
+          <li class="item-info">
+            <span class="sub-title">Region:</span>
+            {{ country?.region }}
+          </li>
+          <li class="item-info">
+            <span class="sub-title">Sub Region:</span>
+            {{ country?.subregion }}
+          </li>
+          <li class="item-info">
+            <span class="sub-title">capital:</span>
+            {{ country?.capital }}
+          </li>
+        </ul>
+        <ul class="list list-left">
+          <li class="item-info">
+            <span class="sub-title">Top Level Domain:</span>
+            {{ country?.topLevelDomain }}
+          </li>
+          <li class="item-info">
+            <span class="sub-title">Currencies:</span>
+            {{ country?.currencies }}
+          </li>
+          <li class="item-info">
+            <span class="sub-title">Languages:</span>
+            {{ country?.languages }}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="borders.length >= 1" class="detail-footer">
+        <h3 class="footer-title">Borders</h3>
+        <div  class="borders">
+          <app-button
+            (click)="onHandleBorderClick(code)"
+            *ngFor="let code of country?.borders"
+            [content]="code"          
+            ></app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

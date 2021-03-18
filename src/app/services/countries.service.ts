@@ -21,7 +21,6 @@ export class CountriesService {
     )
   }
 
-  // make it enum type
   getCountriesByRegion(region: string) {
     return this.http.get(`https://restcountries.eu/rest/v2/region/${region}`).pipe(
       map((res: any)=> {
@@ -31,4 +30,23 @@ export class CountriesService {
       })
     )
   }
+
+  getCountryByName(name: string) {
+    return this.http.get(`https://restcountries.eu/rest/v2/name/${name}`).pipe(
+      map((res: any)=> {
+        return res.map((country: any)=> {
+          return new CountryInfo(country);
+        })
+      })
+    )
+  }
+
+  getCountryByCode(code: string) {
+    return this.http.get(`https://restcountries.eu/rest/v2/alpha/${code}`).pipe(
+      map((res: any)=> {
+        return new CountryInfo(res);
+      })
+    )
+  }
+
 }
