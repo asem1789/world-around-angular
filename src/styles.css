@@ -69,6 +69,33 @@ body {
   font-size: 13px;
 }
 
+.info-pal {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.btn-pal {
+  text-decoration: none !important;
+  padding: 4px 5px;
+  font-size: 18px;
+  color: var(--forground-primary);
+  box-shadow: 0 2px 2px #000;
+}
+
+.btn-pal:hover,
+.btn-pal:active{
+  border-bottom: 1px solid gray;
+}
+
+.info-pal-title {
+  margin-bottom: 10px;  
+  font-weight: 500;
+}
+
+.info-pal-title span {
+  color: green;
+  font-size: 22px;
+}
 /* ======================================= */
 /* MediaQuery of Screen */
 /* ======================================= */

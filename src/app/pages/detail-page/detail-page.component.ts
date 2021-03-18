@@ -13,6 +13,7 @@ export class DetailPageComponent implements OnInit {
   borders: string[] = [];
   historyRoute: any[] = [];
   loading: boolean = true;
+  isSpam: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,20 +25,29 @@ export class DetailPageComponent implements OnInit {
     this.route.paramMap.subscribe((params: any) => {
       let name = params.params.countryName;
       this.countriesService
-        .getCountryByName(name)
-        .subscribe((res: CountryInfo[]) => {
-          this.loading = false;
-          this.country = res[0];
-          this.borders = res[0].borders;
+      .getCountryByName(name)
+      .subscribe((res: CountryInfo[]) => {
+        this.loading = false;
+        this.country = res[0];
+        this.borders = res[0].borders;
+        this.filterData(res[0]);
         });
       this.historyRoute.push(name);
     });
   }
 
+  filterData(country: CountryInfo) {
+    if(country.name === 'Israel'){
+      this.isSpam = true;
+    }else {
+      this.isSpam = false;
+    }
+  }
+
   onHandleBorderClick(code: string) {
+    this.loading = true;
     this.countriesService.getCountryByCode(code).subscribe((res: any) => {
       this.router.navigate(['/countries', res.name, 'detail']);
-      this.loading = true;
     });
   }
 }

@@ -46,3 +46,9 @@ mat-spinner {
   left: 50%;
   transform: tranlateX(-50%);
 }
+
+@media (max-width: 950px) {
+  mat-spinner {
+    top: 45%;
+  }
+}
