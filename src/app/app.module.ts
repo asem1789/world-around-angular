@@ -19,6 +19,7 @@ import { HighlightTextDirective } from './shared/directives';
 import { ButtonComponent } from './components/button/button.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { CommonModule } from '@angular/common';
+import { NotFoundComponent } from './pages/not-found-page/not-found.component';
 
 
 
@@ -36,6 +37,7 @@ import { CommonModule } from '@angular/common';
     HighlightTextDirective,
     DetailPageComponent,
     ButtonComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
