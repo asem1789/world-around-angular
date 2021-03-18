@@ -1,0 +1,30 @@
+.page-404 {
+  padding-top: 50px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+app-button {
+  margin-bottom: 50px;  
+}
+
+.title {
+  color: var(--forground-primary);
+  font-size: 44px;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.33);
+}
+
+@media (max-width: 900px) {
+  .title{
+    font-size: 33px;
+  }
+}
+
+@media (max-width: 500px) {
+  .title{
+    font-size: 23px;
+  }
+}
