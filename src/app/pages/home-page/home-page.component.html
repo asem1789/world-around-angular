@@ -9,16 +9,21 @@
     ngClass.lt-md="card-header-col"
     class="home-search"
   >
-    <app-input (searchInput)="onSearchingCountry($event)" class="control search"></app-input>
-    <app-select (region)="onFilterByRegion($event)" [searchRegion]="searchRegion" class="control select"></app-select>
+    <app-input
+      (searchInput)="onSearchingCountry($event)"
+      class="control search"
+    ></app-input>
+    <app-select
+      (region)="onFilterByRegion($event)"
+      [searchRegion]="searchRegion"
+      class="control select"
+    ></app-select>
   </div>
 
-  <div
-    class="cards-list"
-  >    
-    <app-card-country      
-      [country]="country"      
-      *ngFor="let country of countries$ | searchByName: searchText"
+  <div *ngIf="!loading" class="cards-list">
+    <app-card-country
+      [country]="country"
+      *ngFor="let country of countries$ | searchByName: searchText"      
       [countryInput]="searchText"
     ></app-card-country>
     <!-- these three div to fix style of last row if it's not have full cards -->
@@ -26,4 +31,5 @@
     <div class="hidden"></div>
     <div class="hidden"></div>
   </div>
+  <mat-spinner *ngIf="loading" strokeWidth="4"></mat-spinner>
 </div>

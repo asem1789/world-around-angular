@@ -34,3 +34,15 @@ app-card-country,
   height: 1px  !important;
   margin-bottom: 0;
 }
+
+
+.mat-spinner::ng-deep circle {
+  stroke: var(--color-spinner);
+}
+
+mat-spinner {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: tranlateX(-50%);
+}

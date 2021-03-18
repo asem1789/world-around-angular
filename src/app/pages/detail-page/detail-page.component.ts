@@ -12,6 +12,7 @@ export class DetailPageComponent implements OnInit {
   country!: CountryInfo;
   borders: string[] = [];
   historyRoute: any[] = [];
+  loading: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +26,7 @@ export class DetailPageComponent implements OnInit {
       this.countriesService
         .getCountryByName(name)
         .subscribe((res: CountryInfo[]) => {
+          this.loading = false;
           this.country = res[0];
           this.borders = res[0].borders;
         });
@@ -35,6 +37,7 @@ export class DetailPageComponent implements OnInit {
   onHandleBorderClick(code: string) {
     this.countriesService.getCountryByCode(code).subscribe((res: any) => {
       this.router.navigate(['/countries', res.name, 'detail']);
+      this.loading = true;
     });
   }
 }
