@@ -19,27 +19,31 @@ export class DetailPageComponent implements OnInit {
     private route: ActivatedRoute,
     private countriesService: CountriesService,
     private router: Router,
-    private stackHistory: StackHistoryService,
+    private stackHistory: StackHistoryService
   ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: any) => {
       let name = params.params.countryName;
-      this.countriesService
-      .getCountryByName(name)
-      .subscribe((res: CountryInfo[]) => {
-        this.loading = false;
-        this.country = res[0];
-        this.borders = res[0].borders;
-        this.filterData(res[0]);
-        });
-      });
-    }
-    
-    filterData(country: CountryInfo) {
-    if(country.name === 'Israel'){
+      this.onGetCountryByName(name);
+    });
+  }
+
+  onGetCountryByName(name: string): void{
+    this.countriesService
+    .getCountryByName(name)
+    .subscribe((res: CountryInfo[]) => {
+      this.loading = false;
+      this.country = res[0];
+      this.borders = res[0].borders;
+      this.filterData(res[0]);
+    });
+  }
+
+  filterData(country: CountryInfo) {
+    if (country.name === 'Israel') {
       this.isSpam = true;
-    }else {
+    } else {
       this.isSpam = false;
     }
   }
