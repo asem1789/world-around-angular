@@ -4,7 +4,7 @@ import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundComponent } from './pages/not-found-page/not-found.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   // {path: "", component: HomePageComponent},
   {path: "", redirectTo: "/countries", pathMatch: 'full'},
   {path: "countries", component: HomePageComponent},

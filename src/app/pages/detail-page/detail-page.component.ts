@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CountryInfo } from 'src/app/models';
+import { StackHistoryService } from 'src/app/services';
 import { CountriesService } from 'src/app/services/countries.service';
 
 @Component({
@@ -11,14 +12,14 @@ import { CountriesService } from 'src/app/services/countries.service';
 export class DetailPageComponent implements OnInit {
   country!: CountryInfo;
   borders: string[] = [];
-  historyRoute: any[] = [];
   loading: boolean = true;
   isSpam: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private countriesService: CountriesService,
-    private router: Router
+    private router: Router,
+    private stackHistory: StackHistoryService,
   ) {}
 
   ngOnInit(): void {
@@ -32,11 +33,10 @@ export class DetailPageComponent implements OnInit {
         this.borders = res[0].borders;
         this.filterData(res[0]);
         });
-      this.historyRoute.push(name);
-    });
-  }
-
-  filterData(country: CountryInfo) {
+      });
+    }
+    
+    filterData(country: CountryInfo) {
     if(country.name === 'Israel'){
       this.isSpam = true;
     }else {
@@ -47,6 +47,7 @@ export class DetailPageComponent implements OnInit {
   onHandleBorderClick(code: string) {
     this.loading = true;
     this.countriesService.getCountryByCode(code).subscribe((res: any) => {
+      this.stackHistory.goFront(res.name);
       this.router.navigate(['/countries', res.name, 'detail']);
     });
   }
