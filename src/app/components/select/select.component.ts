@@ -16,9 +16,9 @@ export class SelectComponent implements OnInit {
     { id: 6, value: 'oceania', text: 'Oceania' },
   ];
   isSelected: boolean = false;
-  selectedRegion: string = '';
+  selectedRegion: string | null = null;
   @Output() region = new EventEmitter();
-  @Input() searchRegion: string = '';
+  @Input() searchRegion: string  = '';
 
   constructor() {}
 
@@ -30,9 +30,8 @@ export class SelectComponent implements OnInit {
     this.isSelected = !this.isSelected;
   }
 
-  onChooseValue(from: HTMLLIElement): void {
-    const value = from.textContent || '';
-    this.selectedRegion = value.trim();
+  onChooseValue(value: string | null ): void {
+    this.selectedRegion = value && value.trim();
     this.region.emit(this.selectedRegion);
   }
 }

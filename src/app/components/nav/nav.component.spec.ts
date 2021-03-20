@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/app/material/material.module';
+import { ModeIconComponent } from '../mode-icon/mode-icon.component';
 import { NavComponent } from './nav.component';
 
 describe('Card-country Component (Unit Testing) ', () => {
@@ -10,7 +11,7 @@ describe('Card-country Component (Unit Testing) ', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, MaterialModule],
-      declarations: [NavComponent],
+      declarations: [NavComponent, ModeIconComponent],
     }).compileComponents();
   });
 
