@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/app/material/material.module';
 import { InputComponent } from './input.component';
 
-describe('Card-country Component (Unit Testing) ', () => {
+describe('Input Component (Unit Testing) ', () => {
   let fixture: ComponentFixture<InputComponent>;
   let component: InputComponent;
 

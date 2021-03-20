@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from 'src/app/material/material.module';
 import { SelectComponent } from './select.component';
 
-describe('Card-country Component (Unit Testing) ', () => {
+describe('Select Component (Unit Testing) ', () => {
   let fixture: ComponentFixture<SelectComponent>;
   let component: SelectComponent;
 

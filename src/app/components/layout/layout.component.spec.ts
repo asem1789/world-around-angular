@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LayoutComponent } from './layout.component';
 
-describe('Card-country Component (Unit Testing) ', () => {
+describe('Layout Component (Unit Testing) ', () => {
   let fixture: ComponentFixture<LayoutComponent>;
   let component: LayoutComponent;
 

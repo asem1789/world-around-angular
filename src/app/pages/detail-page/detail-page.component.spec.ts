@@ -12,7 +12,7 @@ import { MaterialModule } from 'src/app/material/material.module';
 // import { CountriesService } from 'src/app/services/countries.service';
 import { DetailPageComponent } from './detail-page.component';
 
-describe('Card-country Component (Unit Testing) ', () => {
+describe('Detail Page compoennt (Unit Testing) ', () => {
   let fixture: ComponentFixture<DetailPageComponent>;
   let component: DetailPageComponent;
 
