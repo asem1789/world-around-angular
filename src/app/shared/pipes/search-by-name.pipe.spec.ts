@@ -1,5 +1,5 @@
 import { SearchByNamePipe } from './search-by-name.pipe';
-import {CountriesFack} from '../../testing/fack-data';
+import { fackData } from '../../testing/fack-data';
 import { CountryInfo } from 'src/app/models';
 
 describe('searchByName Pipe', () => {
@@ -10,9 +10,7 @@ describe('searchByName Pipe', () => {
 
   it('should return the all countries if value is empty', () => {
     const pipe = new SearchByNamePipe();
-    let fackCountries: CountryInfo[];
-
-    fackCountries = CountriesFack;
+    let fackCountries: CountryInfo[] = fackData;
     const reuslt = pipe.transform(fackCountries, "");
 
     expect(reuslt).toBe(fackCountries);
@@ -23,7 +21,7 @@ describe('searchByName Pipe', () => {
 
     let fackCountries: CountryInfo[];
 
-    fackCountries = CountriesFack;
+    fackCountries = fackData;
     const reuslt = pipe.transform(fackCountries, "palestine");
 
     if(reuslt){

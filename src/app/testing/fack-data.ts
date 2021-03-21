@@ -1,4 +1,4 @@
-export const CountriesFack = [
+export const fackData = [
   {
     name: 'Palestine',
     population: 13700000,
@@ -11,63 +11,5 @@ export const CountriesFack = [
     currencies: 'currency occupation sheqel',
     languages: 'Arabic',
     borders: ['EGY', 'JOR', 'LBN', 'SYR'],
-    
-  },
-  {
-    name: 'Afghanistan',
-    population: 27657145,
-    region: 'Asia',
-    capital: 'Kabul',
-    flag: 'https://restcountries.eu/data/afg.svg',
-    nativeName: 'افغانستان',
-    subregion: 'Southern Asia',
-    topLevelDomain: '.af',
-    currencies: 'Afghan afghani',
-    languages: 'Pashto, Uzbek, Turkmen',
-    borders: ['IRN', 'PAK', 'TKM', 'UZB', 'TJK', 'CHN'],
-    
-  },
-  {
-    name: 'Albania',
-    population: 2886026,
-    region: 'Europe',
-    capital: 'Tirana',
-    flag: 'https://restcountries.eu/data/alb.svg',
-    nativeName: 'Shqipëria',
-    subregion: 'Southern Europe',
-    topLevelDomain: '.al',
-    currencies: 'Albanian lek',
-    languages: 'Albanian',
-    borders: ['MNE', 'GRC', 'MKD', 'KOS'],
-    
-  },
-  {
-    name: 'Algeria',
-    population: 40400000,
-    region: 'Africa',
-    capital: 'Algiers',
-    flag: 'https://restcountries.eu/data/dza.svg',
-    nativeName: 'الجزائر',
-    subregion: 'Northern Africa',
-    topLevelDomain: '.dz',
-    currencies: 'Algerian dinar',
-    languages: 'Arabic',
-    borders: ['TUN', 'LBY', 'NER', 'ESH', 'MRT', 'MLI', 'MAR'],
-    
-  },
-  
-  {
-    name: 'Australia',
-    population: 24117360,
-    region: 'Oceania',
-    capital: 'Canberra',
-    flag: 'https://restcountries.eu/data/aus.svg',
-    nativeName: 'Australia',
-    subregion: 'Australia and New Zealand',
-    topLevelDomain: '.au',
-    currencies: 'Australian dollar',
-    languages: 'English',
-    borders: [],
-    
   }, 
 ];

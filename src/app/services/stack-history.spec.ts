@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { StackHistoryService } from './stack-history';
 
-describe('ThemeService (Unit Testing) ', () => {
+describe('SackHistory Service testing', () => {
   let service: StackHistoryService;
 
   beforeEach(() => {
