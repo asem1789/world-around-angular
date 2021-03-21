@@ -1,0 +1,38 @@
+<div
+  class="page-home max-row"
+  ngClass.xs="padding-x-1"
+  ngClass.sm="padding-x-2"
+  ngClass.gt-sm="padding-x-3"
+>
+  <div
+    ngClass.gt-sm="card-header-row"
+    ngClass.lt-md="card-header-col"
+    class="home-search"
+  >
+    <app-input
+      (searchInput)="onSearchingCountry($event)"
+      class="control search"
+    ></app-input>
+    <app-select
+      (region)="onFilterByRegion($event)"
+      [searchRegion]="searchRegion"
+      class="control select"
+    ></app-select>
+  </div>
+
+  <div *ngIf="!loading" class="cards-list">
+    <ng-container *ngIf="countries$ | searchByName: searchText as countries">
+      <app-card-country
+        [country]="country"
+        *ngFor="let country of countries"
+        [countryInput]="searchText"
+      ></app-card-country>
+      <p class="message" *ngIf="countries.length === 0">No Countries Matched!</p>
+    </ng-container>
+    <!-- these three div to fix style of last row if it's not have full cards -->
+    <div class="hidden"></div>
+    <div class="hidden"></div>
+    <div class="hidden"></div>
+  </div>
+  <mat-spinner *ngIf="loading" strokeWidth="4"></mat-spinner>
+</div>

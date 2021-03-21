@@ -1,0 +1,37 @@
+<!-- <a class="card" [routerLink]="['/countries', country.name, 'detail']"> -->
+<a class="card" (click)="onClick(country.name)">
+  <img class="img" src="{{ country.flag }}" alt="flag image" />
+  <div class="card-content">
+    <h2
+      *ngIf="!isSpam"
+      class="card-title"
+      highlightText
+      [searchText]="countryInput"
+      [content]="country.name"
+      [classes]="'highlight-text'"
+    >
+      {{ country.name }}
+    </h2>
+    <span class="card-title" *ngIf="isSpam">{{ country.correctName }}</span>
+    <div class="card-info">
+      <ul *ngIf="!isSpam" class="list">
+        <li class="item-info">
+          <span class="sub-title">Population:</span>
+          {{ country.population }}
+        </li>
+        <li class="item-info">
+          <span class="sub-title">Region:</span> {{ country.region }}
+        </li>
+        <li class="item-info">
+          <span class="sub-title">Capital:</span> {{ country.capital }}
+        </li>
+      </ul>
+      <div class="info-pal" *ngIf="isSpam">
+        <h3 class="info-pal-title">the original Country is: <span>Palestine</span></h3>
+        <a class="btn-pal" [routerLink]="['/countries/Palestine/detail']"
+          >Info About Palestine</a
+        >
+      </div>
+    </div>
+  </div>
+</a>

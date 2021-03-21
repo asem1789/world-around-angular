@@ -1,4 +1,287 @@
 /* You can add global styles to this file, and also import other style files */
+:root,
+[data-color-mode="ligth"] {
+  --forground-primary: #000000;
+  --forground-secondary: gray;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  --background-primary: #ffffff;
+  --background-secondary: #f0f0f0;
+
+  --color-gray-1: #999;
+  --color-gray-2: #333;
+  
+  --color-spinner: #2c3e50;
+
+  --color-info: #17a2b8;
+}
+
+[data-color-mode="dark"] {
+  --forground-primary: #ffffff;
+  --forground-secondary: gray;
+
+  --background-primary: #2b3743;
+  --background-secondary: #212e37;
+
+  --color-gray-1: rgb(214, 211, 211);
+  --color-gray-2: #f0f0f0;
+
+  --color-spinner: #ffffff;
+
+  --color-info: #ffffff
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+}
+
+/* General Styles */
+.max-row {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.highlight-text {
+  font-weight: 600;
+  color: #f00;
+}
+
+.btn {
+  padding: 3px 4px;
+  width: 80px;
+  background-color: var(--background-primary);
+  color: var(--forground-primary);
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.info-pal {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.btn-pal {
+  text-decoration: none !important;
+  padding: 4px 5px;
+  font-size: 18px;
+  color: var(--forground-primary);
+  box-shadow: 0 2px 2px #000;
+}
+
+.btn-pal:hover,
+.btn-pal:active{
+  border-bottom: 1px solid gray;
+}
+
+.info-pal-title {
+  margin-bottom: 10px;  
+  font-weight: 500;
+}
+
+.info-pal-title span {
+  color: green;
+  font-size: 22px;
+}
+/* ======================================= */
+/* MediaQuery of Screen */
+/* ======================================= */
+
+/* style of padding */
+.padding-x-1 {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.padding-x-2 {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.padding-x-3 {
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+/* style for search and select block */
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header-row > app-input {
+  margin-right: 30%;
+  flex: 1 0 50%;
+}
+
+.card-header-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header-col app-input {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.card-header-col > app-select {
+  width: 60%;
+}
+
+/* style for cards countries */
+
+.card .img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cards-list > app-card-country,
+.hidden {
+  flex: 1 0 23%;
+  margin-bottom: 70px;
+}
+
+/* Responsive Detail page */
+.list-right {
+  margin-right: 20px;
+}
+
+.detail-flag-box {
+  flex: 1 0 40%;
+  margin-right: 12%;
+}
+
+.detail-info {
+  flex: 1 0 48%;
+  padding: 30px 10px;
+}
+
+.detail-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 1120px) {
+  .cards-list > app-card-country:not(:nth-child(4n + 0)),
+  .hidden:not(:nth-child(4n + 0)) {
+    margin-right: 2.6%;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .cards-list > app-card-country,
+  .hidden {
+    flex: 1 0 30%;
+    margin-bottom: 50px;
+  }
+
+  .cards-list > app-card-country:not(:nth-child(3n + 0)) {
+    margin-right: 3.33%;
+  }
+  .list-right {
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .card .img {
+    width: 100%;
+    height: 180px;
+  }
+  .detail-flag-box {
+    flex: 1 0 38%;
+    margin-right: 10%;
+  }
+  .detail-info {
+    flex: 1 0 50%;
+  }
+}
+
+@media (max-width: 850px) {
+  .card .img {
+    width: 100%;
+    height: 180px;
+  }
+  .detail-flag-box {
+    flex: 1 0 38%;
+    margin-right: 7%;
+  }
+  .detail-info {
+    flex: 1 0 53%;
+  }
+}
+
+@media (max-width: 770px) {
+  .cards-list > app-card-country {
+    flex: 1 0 34%;
+    margin-bottom: 50px;
+  }
+
+  .cards-list > app-card-country:not(:nth-child(2n + 0)) {
+    margin-right: 8%;
+  }
+  .detail-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detail-flag-box {
+    width: 90%;
+    margin-right: 7%;
+  }
+  .detail-info {
+    width: 100%;
+  }
+  .list-right {
+    width: 40%;
+  }
+}
+
+@media (max-width: 500px) {
+  .cards-list > app-card-country {
+    flex: 1 0 85%;
+    max-width: 80%;
+    margin: 0 auto 50px auto !important;
+  }
+  .lists {
+    flex-direction: column;
+  }
+  .list-right {
+    margin-bottom: 30px;
+  }
+  .detail-flag-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .flag {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 265px) {
+  .flag {
+    height: 150px !important;
+  }
+}
+
+

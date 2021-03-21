@@ -1,0 +1,58 @@
+.select-input {
+  width: 100%;
+  height: 40px;
+  padding: 3px 20px;
+  border: 0;
+  border-radius: 3px;
+  background-color: var(--background-primary);
+  outline: none;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  color: var(--forground-primary);
+  cursor: pointer;
+}
+
+.select-lable {
+  position: relative;  
+}
+
+.select-icon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--forground-secondary);
+  pointer-events: none;
+}
+
+.item {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--forground-primary);
+}
+
+.item:hover {
+  background-color: var(--background-secondary);
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.list {
+  list-style: none;
+  background-color: inherit;
+  background-color: var(--background-primary);
+  margin-top: 3px;
+  box-shadow: -1px 2px 2px 2px  rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+}
+
+@media (max-width: 950px) {
+  .select-input {
+    height: 50px;
+  }
+}

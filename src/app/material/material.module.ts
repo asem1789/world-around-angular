@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-
+const MODULES = [MatIconModule, MatProgressSpinnerModule];
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [...MODULES],
+  exports: [...MODULES],
 })
-export class MaterialModule { }
+export class MaterialModule {}
