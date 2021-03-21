@@ -15,7 +15,7 @@ export class StackHistoryService {
   }
 
   getLast(): string | null {
-    if(this.stackHistory.length === 0) {
+    if (this.stackHistory.length === 0) {
       return null;
     }
     return this.stackHistory[this.stackHistory.length - 1];
