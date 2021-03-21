@@ -1,4 +1,4 @@
-import { Component,  Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { StackHistoryService } from 'src/app/services';
 
@@ -7,24 +7,24 @@ import { StackHistoryService } from 'src/app/services';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.css'],
 })
-export class ButtonComponent  {
+export class ButtonComponent {
   @Input() content: string = 'click';
   @Input() icon: string | null = null;
   @Input() isBack: boolean = false;
+  @Input() classes: string = "";
 
   constructor(
     private router: Router,
     private stackHistory: StackHistoryService
   ) {}
 
-
   onHandleClick(): void {
-    if (this.isBack ) {
+    if (this.isBack) {
       this.stackHistory.goBack();
       const last = this.stackHistory.getLast();
-      if(!last){
-          this.router.navigate(['/countries']);
-      }else {
+      if (!last) {
+        this.router.navigate(['/countries']);
+      } else {
         this.router.navigate(['/countries', last, 'detail']);
       }
     }

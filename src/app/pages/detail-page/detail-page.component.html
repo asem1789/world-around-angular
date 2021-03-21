@@ -9,6 +9,7 @@
       [content]="'Back'"
       [icon]="'keyboard_backspace'"
       [isBack]="true"
+      [classes]="'back'"
     ></app-button>
   </div>
   <div *ngIf="!loading" class="detail-content">
@@ -71,6 +72,7 @@
             (click)="onHandleBorderClick(code)"
             *ngFor="let code of country?.borders"
             [content]="code"
+            [classes]="'border'"
           ></app-button>
         </div>
       </div>
