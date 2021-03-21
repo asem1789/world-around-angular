@@ -1,4 +1,5 @@
-<a class="card" [routerLink]="['/countries', country.name, 'detail']">
+<!-- <a class="card" [routerLink]="['/countries', country.name, 'detail']"> -->
+<a class="card" (click)="onClick(country.name)">
   <img class="img" src="{{ country.flag }}" alt="flag image" />
   <div class="card-content">
     <h2

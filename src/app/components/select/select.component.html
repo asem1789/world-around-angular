@@ -11,7 +11,7 @@
   </label>
   <ul *ngIf="isSelected" class="list">
     <li
-      (click)="onChooseValue(f)"
+      (click)="onChooseValue(f.textContent)"
       ngModule
       #f
       class="item"
