@@ -51,8 +51,8 @@ export class DetailPageComponent implements OnInit {
   onHandleBorderClick(code: string) {
     this.loading = true;
     this.countriesService.getCountryByCode(code).subscribe((res: any) => {
-      this.stackHistory.goFront(res.name);
-      this.router.navigate(['/countries', res.name, 'detail']);
+      this.stackHistory.goFront(res[0].name);
+      this.router.navigate(['/countries', res[0].name, 'detail']);
     });
   }
 }
