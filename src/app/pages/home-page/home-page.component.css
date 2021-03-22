@@ -53,12 +53,6 @@ mat-spinner {
   }
 }
 
-.message {
-  color: var(--color-info);
-  font-size: 25px;
-  text-transform: capitalize;
-}
-
 .card-country {
   transition: all 0.6s;
 }

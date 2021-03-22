@@ -12,7 +12,7 @@
       [classes]="'back'"
     ></app-button>
   </div>
-  <div *ngIf="!loading" class="detail-content">
+  <div *ngIf="!loading && !error" class="detail-content">
     <div moveDown class="detail-flag-box">
       <img
         down-hide
@@ -85,5 +85,6 @@
       </div>
     </div>
   </div>
+  <p *ngIf="error" class="message">{{ error }}</p>
   <mat-spinner *ngIf="loading" strokeWidth="4"></mat-spinner>
 </div>

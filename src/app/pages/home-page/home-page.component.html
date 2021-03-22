@@ -29,7 +29,10 @@
         [countryInput]="searchText"
       ></app-card-country>
       <p class="message" *ngIf="countries.length === 0">
-        No Countries Matched!
+        <span *ngIf="!error"> No Countries Matched! </span>
+        <span *ngIf="error">
+          {{ error }}
+        </span>
       </p>
     </ng-container>
     <!-- these three div to fix style of last row if it's not have full cards -->

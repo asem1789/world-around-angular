@@ -14,6 +14,7 @@ export class DetailPageComponent implements OnInit {
   borders: string[] = [];
   loading: boolean = true;
   isSpam: boolean = false;
+  error: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,14 +31,17 @@ export class DetailPageComponent implements OnInit {
   }
 
   onGetCountryByName(name: string): void {
-    this.countriesService
-      .getCountryByName(name)
-      .subscribe((res: CountryInfo[]) => {
+    this.countriesService.getCountryByName(name).subscribe(
+      (res: CountryInfo[]) => {
         this.loading = false;
         this.country = res[0];
         this.borders = res[0].borders;
         this.filterData(res[0]);
-      });
+      },
+      (err: Error) => {
+        this.handleError(err.message);
+      }
+    );
   }
 
   filterData(country: CountryInfo) {
@@ -50,9 +54,19 @@ export class DetailPageComponent implements OnInit {
 
   onHandleBorderClick(code: string) {
     this.loading = true;
-    this.countriesService.getCountryByCode(code).subscribe((res: any) => {
-      this.stackHistory.goFront(res[0].name);
-      this.router.navigate(['/countries', res[0].name, 'detail']);
-    });
+    this.countriesService.getCountryByCode(code).subscribe(
+      (res: any) => {
+        this.stackHistory.goFront(res[0].name);
+        this.router.navigate(['/countries', res[0].name, 'detail']);
+      },
+      (err: Error) => {
+        this.handleError(err.message);
+      }
+    );
+  }
+
+  handleError(msg: string) {
+    this.loading = false;
+    this.error = msg;
   }
 }

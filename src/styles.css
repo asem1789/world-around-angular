@@ -62,6 +62,12 @@ body {
   color: #f00;
 }
 
+.message {
+  color: var(--color-info);
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
 .btn {
   padding: 3px 4px;
   width: 80px;
