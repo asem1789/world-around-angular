@@ -89,17 +89,13 @@ mat-spinner {
   position: absolute;
   right: 300px;
   opacity: 0;
-  /* transition: all 0.06s; */
 }
 
 .show {
-  /* position: ; */
-  /* right: 100px; */
-  /* opacity: 1; */
-  animation: moveToRight 0.8s ease-in;
+  animation: moveInLeft 0.8s ease-in;
 }
 
-@keyframes moveToRight {
+@keyframes moveInLeft {
   0% {
     opacity: 0;
     transform: translateX(70px);
@@ -110,5 +106,43 @@ mat-spinner {
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* style for Directive MoveDown */
+.down-hide {
+  opacity: 0;
+  transition: all 5.5s;
+}
+
+.down-show {
+  animation: moveInTop 0.8s ease-in;
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  50% {
+    opacity: 0.1;
+    transform: translateY(-100px);
+  }
+  70% {
+    opacity: 0.2;
+    transform: translateY(10px);
+  }
+  80% {
+    opacity: 0.3;
+    transform: translateY(5);
+  }
+  95% {
+    opacity: 0.5;
+    transform: translateY(-20px);
+  }
+  100% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translateY(0);
   }
 }

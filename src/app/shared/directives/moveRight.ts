@@ -25,8 +25,10 @@ export class MoveRightDirective implements OnInit {
 
   startMove() {
     const allList = this.borderSrv.getList();
-    this.renderer.removeClass(allList[this.counter], 'hide');
-    this.renderer.addClass(allList[this.counter], 'show');
+    if (allList[this.counter]) {
+      this.renderer.removeClass(allList[this.counter], 'hide');
+      this.renderer.addClass(allList[this.counter], 'show');
+    }
     setTimeout(() => {
       this.counter += 1;
       if (this.counter < allList.length) {

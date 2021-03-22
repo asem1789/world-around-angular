@@ -13,8 +13,13 @@
     ></app-button>
   </div>
   <div *ngIf="!loading" class="detail-content">
-    <div class="detail-flag-box">
-      <img class="flag" src="{{ country?.flag }}" alt="flag country" />
+    <div moveDown class="detail-flag-box">
+      <img
+        down-hide
+        class="flag"
+        src="{{ country?.flag }}"
+        alt="flag country"
+      />
     </div>
     <div class="detail-info">
       <h2 *ngIf="!isSpam" class="detail-title">{{ country?.name }}</h2>

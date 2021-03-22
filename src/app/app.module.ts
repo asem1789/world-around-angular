@@ -21,8 +21,7 @@ import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './pages/not-found-page/not-found.component';
 import { MoveRightDirective } from './shared/directives/moveRight';
-
-
+import { MoveDownDirective } from './shared/directives/moveDown';
 
 @NgModule({
   declarations: [
@@ -40,6 +39,7 @@ import { MoveRightDirective } from './shared/directives/moveRight';
     ButtonComponent,
     NotFoundComponent,
     MoveRightDirective,
+    MoveDownDirective,
   ],
   imports: [
     BrowserModule,
@@ -53,4 +53,4 @@ import { MoveRightDirective } from './shared/directives/moveRight';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
