@@ -23,11 +23,14 @@
   <div *ngIf="!loading" class="cards-list">
     <ng-container *ngIf="countries$ | searchByName: searchText as countries">
       <app-card-country
+        class="wake-up card-country"
         [country]="country"
         *ngFor="let country of countries"
         [countryInput]="searchText"
       ></app-card-country>
-      <p class="message" *ngIf="countries.length === 0">No Countries Matched!</p>
+      <p class="message" *ngIf="countries.length === 0">
+        No Countries Matched!
+      </p>
     </ng-container>
     <!-- these three div to fix style of last row if it's not have full cards -->
     <div class="hidden"></div>
