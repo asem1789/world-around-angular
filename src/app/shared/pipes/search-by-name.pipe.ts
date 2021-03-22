@@ -16,8 +16,11 @@ export class SearchByNamePipe implements PipeTransform {
       return countries;
     }
 
-    return countries.filter(({ name }) => {
+    return countries.filter(({ name, nativeName }) => {
       const resetSearch = searchCountry.toLowerCase();
+      if (nativeName.includes(resetSearch)) {
+        return true;
+      }
       return name.toLowerCase().indexOf(resetSearch) !== -1;
     });
   }
