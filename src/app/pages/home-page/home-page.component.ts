@@ -56,7 +56,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
   getAllCountries() {
     this.countriesService.getAllCountries().subscribe(
       (res: CountryInfo[]) => {
-        // console.log('all COuntries: ', res);
         this.countries$ = res;
         this.loading = false;
       },

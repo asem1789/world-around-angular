@@ -27,6 +27,7 @@ describe('Detail Page compoennt (Unit Testing) ', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DetailPageComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should DetailPageComponent create', () => {
@@ -54,5 +55,4 @@ describe('Detail Page compoennt (Unit Testing) ', () => {
   it('should component created ', () => {
     expect(component).toBeTruthy();
   });
-
 });

@@ -25,13 +25,8 @@ describe('ButtonComponent unit testing', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should button element have class (btn) ', () => {
-    // act
-    const button: HTMLElement = fixture.nativeElement.querySelector('button');
-    const className = button.classList;
-
-    // assert
-    expect(className).toContain('btn');
+  it('should button element content recive content Input ', () => {
+    expect(component.content).toBeTruthy();
   });
 
   it("should correctly render the passed @Input('content') value ", () => {
