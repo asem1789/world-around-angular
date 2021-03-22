@@ -8,6 +8,7 @@
   position: relative;
   outline: none;
   overflow: hidden;
+  box-shadow: 0 0 5px var(--shadow-icon);
 }
 
 .border-dark {
@@ -15,7 +16,7 @@
 }
 
 .border-light {
-  border: 2px solid #fff ;
+  border: 2px solid #fff;
 }
 
 .icon-box {
@@ -30,13 +31,16 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
+  transition: left 3.9s;
 }
 
 .icon-box-sun {
+  transition: all 3.9s;
   left: 2px;
 }
 
 .icon-box-moon {
+  transition: all 3.9s;
   right: 2px;
 }
 
@@ -49,13 +53,12 @@
 }
 
 .border-light .icon-sun {
-  color: gray  !important;
+  color: gray !important;
 }
 
 .border-dark .icon-moon {
-  color: gray  !important;
+  color: gray !important;
 }
-
 
 .bg-icon {
   position: absolute;
@@ -75,5 +78,3 @@
   background-color: #fff;
   right: 2px;
 }
-
-
