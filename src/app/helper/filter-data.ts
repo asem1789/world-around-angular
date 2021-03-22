@@ -24,6 +24,18 @@ function checkCorrectInfo(country: any) {
         symbol: '₪',
       },
     ];
+  } else if (
+    country.alpha3Code === 'EGY' ||
+    country.alpha3Code === 'SYR' ||
+    country.alpha3Code === 'JOR' ||
+    country.alpha3Code === 'LBN'
+  ) {
+    // correct borders
+    const correctBorders = country.borders.map((border: string) => {
+      if (border === 'ISR') return 'PSE';
+      return border;
+    });
+    country.borders = correctBorders;
   } else if (country.name === 'Israel') {
     country.name = 'Israel';
     country.correctName = 'Zionist occupation';
