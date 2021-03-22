@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { CountryInfo } from 'src/app/models';
 import { CountriesService } from 'src/app/services/countries.service';
@@ -9,13 +10,14 @@ import { CountriesService } from 'src/app/services/countries.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css'],
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit, OnDestroy {
   countries$: CountryInfo[] = [];
   searchText: string = '';
   searchRegion: string = '';
   loading: boolean = true;
   error: string | null = null;
   selected!: string;
+  private countriesSubscription!: Subscription;
 
   constructor(
     private countriesService: CountriesService,
@@ -24,7 +26,7 @@ export class HomePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
+    this.countriesSubscription = this.route.queryParams.subscribe((params) => {
       if (this.isParamsEmpty(params)) {
         this.searchRegion = '';
         this.getAllCountries();
@@ -105,5 +107,9 @@ export class HomePageComponent implements OnInit {
   handleError(msg: string) {
     this.loading = false;
     this.error = msg;
+  }
+
+  ngOnDestroy() {
+    this.countriesSubscription.unsubscribe();
   }
 }

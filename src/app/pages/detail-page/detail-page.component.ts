@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CountryInfo } from 'src/app/models';
 import { StackHistoryService } from 'src/app/services';
 import { CountriesService } from 'src/app/services/countries.service';
@@ -9,12 +10,13 @@ import { CountriesService } from 'src/app/services/countries.service';
   templateUrl: './detail-page.component.html',
   styleUrls: ['./detail-page.component.css'],
 })
-export class DetailPageComponent implements OnInit {
+export class DetailPageComponent implements OnInit, OnDestroy {
   country!: CountryInfo;
   borders: string[] = [];
   loading: boolean = true;
   isSpam: boolean = false;
   error: string | null = null;
+  private countriesSubscription!: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,10 +26,12 @@ export class DetailPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: any) => {
-      let name = params.params.countryName;
-      this.onGetCountryByName(name);
-    });
+    this.countriesSubscription = this.route.paramMap.subscribe(
+      (params: any) => {
+        let name = params.params.countryName;
+        this.onGetCountryByName(name);
+      }
+    );
   }
 
   onGetCountryByName(name: string): void {
@@ -68,5 +72,9 @@ export class DetailPageComponent implements OnInit {
   handleError(msg: string) {
     this.loading = false;
     this.error = msg;
+  }
+
+  ngOnDestroy() {
+    this.countriesSubscription.unsubscribe();
   }
 }
