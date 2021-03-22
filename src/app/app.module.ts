@@ -15,13 +15,15 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { CardCountryComponent } from './components/card-country/card-country.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchByNamePipe } from './shared/pipes';
-import { HighlightTextDirective } from './shared/directives';
+import {
+  HighlightTextDirective,
+  MoveRightDirective,
+  MoveDownDirective,
+} from './shared/directives';
 import { ButtonComponent } from './components/button/button.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './pages/not-found-page/not-found.component';
-
-
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { NotFoundComponent } from './pages/not-found-page/not-found.component';
     DetailPageComponent,
     ButtonComponent,
     NotFoundComponent,
+    MoveRightDirective,
+    MoveDownDirective,
   ],
   imports: [
     BrowserModule,
@@ -51,4 +55,4 @@ import { NotFoundComponent } from './pages/not-found-page/not-found.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

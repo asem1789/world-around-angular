@@ -22,14 +22,14 @@ describe('HomePage Component (Unit Testing) ', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HomePageComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  
   it('should HomePageComponent create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Should searchText = Eygpt value when call \"onSearchingCountry(\'Eygpt\')\"', () => {
+  it('Should searchText = Eygpt value when call "onSearchingCountry(\'Eygpt\')"', () => {
     let name = 'Eygpt';
     component.onSearchingCountry(name);
     fixture.detectChanges();
@@ -41,6 +41,4 @@ describe('HomePage Component (Unit Testing) ', () => {
   //   fixture.detectChanges();
   //   expect(component.onFilterByRegion("Africa")).toBe(undefined);
   // });
-
-
 });

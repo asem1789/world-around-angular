@@ -1,5 +1,5 @@
-<!-- <a [routerLink]="link" class="btn"> -->
-<button (click)="onHandleClick()" class="btn">
+<!-- <button (click)="onHandleClick()" class="btn back"> -->
+<button (click)="onHandleClick()" class="{{'btn ' + classes}}">
   <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
   {{ content }}
 </button>

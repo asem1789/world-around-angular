@@ -11,46 +11,23 @@ describe('searchByName Pipe', () => {
   it('should return the all countries if value is empty', () => {
     const pipe = new SearchByNamePipe();
     let fackCountries: CountryInfo[] = fackData;
-    const reuslt = pipe.transform(fackCountries, "");
+    const reuslt = pipe.transform(fackCountries, '');
 
     expect(reuslt).toBe(fackCountries);
   });
-  
-  it('should return Palestine Country if value is \'Palestine\' ', () => {
+
+  it("should return Palestine Country if value is 'Palestine' ", () => {
     const pipe = new SearchByNamePipe();
 
     let fackCountries: CountryInfo[];
 
     fackCountries = fackData;
-    const reuslt = pipe.transform(fackCountries, "palestine");
+    const reuslt = pipe.transform(fackCountries, 'palestine');
 
-    if(reuslt){
-      expect(reuslt![0].name).toBe("Palestine");      
-    }else {
+    if (reuslt) {
+      expect(reuslt![0].name).toBe('Palestine');
+    } else {
       expect(reuslt).toBeUndefined();
     }
   });
-
-  // it('should return current color', () => {
-  //   const pipe = new ColorNamerPipe();
-  //   let transformedValue = pipe.transform({
-  //     r: 255,
-  //     g: 255,
-  //     b: 255
-  //   });
-  //   expect(transformedValue).toEqual('white');
-  //   transformedValue = pipe.transform({
-  //     r: 255,
-  //     g: 0,
-  //     b: 0,
-  //   });
-  //   expect(transformedValue).toEqual('red');
-  //   transformedValue = pipe.transform({
-  //     r: 0,
-  //     g: 255,
-  //     b: 0,
-  //   });
-  //   expect(transformedValue).toEqual('lime');
-
-  // });
 });

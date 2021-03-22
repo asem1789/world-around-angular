@@ -1,10 +1,29 @@
-
-
 mat-icon {
   position: relative;
   right: 5px;
+  transition: all 0.5s;
 }
 
 .btn {
   outline: 0;
+  transition: all 0.5s;
+}
+
+.back:hover,
+.back:active {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.301);
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+.back:hover > mat-icon,
+.back:active {
+  right: 8px;
+}
+
+.border:hover,
+.border.active {
+  transform: translateY(-2px);
+  font-weight: bold;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 }

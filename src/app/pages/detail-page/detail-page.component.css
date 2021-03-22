@@ -34,9 +34,9 @@
   list-style: none;
 }
 
-.item-info {  
+.item-info {
   font-size: 13px;
-  color: var(--color-gray-1)
+  color: var(--color-gray-1);
 }
 
 .item-info:not(:last-child) {
@@ -76,4 +76,73 @@ mat-spinner {
 .info-pal {
   text-align: left;
   font-size: 18px;
+}
+
+/* style for directive MoveRight */
+
+.borders {
+  position: relative;
+  overflow: hidden;
+}
+
+.hide {
+  position: absolute;
+  right: 300px;
+  opacity: 0;
+}
+
+.show {
+  animation: moveInLeft 0.8s ease-in;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* style for Directive MoveDown */
+.down-hide {
+  opacity: 0;
+  transition: all 5.5s;
+}
+
+.down-show {
+  animation: moveInTop 0.8s ease-in;
+}
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  50% {
+    opacity: 0.1;
+    transform: translateY(-100px);
+  }
+  70% {
+    opacity: 0.2;
+    transform: translateY(10px);
+  }
+  80% {
+    opacity: 0.3;
+    transform: translateY(5);
+  }
+  95% {
+    opacity: 0.5;
+    transform: translateY(-20px);
+  }
+  100% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
