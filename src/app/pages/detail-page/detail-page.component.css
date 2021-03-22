@@ -34,9 +34,9 @@
   list-style: none;
 }
 
-.item-info {  
+.item-info {
   font-size: 13px;
-  color: var(--color-gray-1)
+  color: var(--color-gray-1);
 }
 
 .item-info:not(:last-child) {
@@ -76,4 +76,39 @@ mat-spinner {
 .info-pal {
   text-align: left;
   font-size: 18px;
+}
+
+/* style for directive MoveRight */
+
+.borders {
+  position: relative;
+  overflow: hidden;
+}
+
+.hide {
+  position: absolute;
+  right: 300px;
+  opacity: 0;
+  /* transition: all 0.06s; */
+}
+
+.show {
+  /* position: ; */
+  /* right: 100px; */
+  /* opacity: 1; */
+  animation: moveToRight 0.8s ease-in;
+}
+
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

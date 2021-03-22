@@ -29,15 +29,15 @@ export class DetailPageComponent implements OnInit {
     });
   }
 
-  onGetCountryByName(name: string): void{
+  onGetCountryByName(name: string): void {
     this.countriesService
-    .getCountryByName(name)
-    .subscribe((res: CountryInfo[]) => {
-      this.loading = false;
-      this.country = res[0];
-      this.borders = res[0].borders;
-      this.filterData(res[0]);
-    });
+      .getCountryByName(name)
+      .subscribe((res: CountryInfo[]) => {
+        this.loading = false;
+        this.country = res[0];
+        this.borders = res[0].borders;
+        this.filterData(res[0]);
+      });
   }
 
   filterData(country: CountryInfo) {

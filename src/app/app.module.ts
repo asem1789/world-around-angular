@@ -20,6 +20,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './pages/not-found-page/not-found.component';
+import { MoveRightDirective } from './shared/directives/moveRight';
 
 
 
@@ -38,6 +39,7 @@ import { NotFoundComponent } from './pages/not-found-page/not-found.component';
     DetailPageComponent,
     ButtonComponent,
     NotFoundComponent,
+    MoveRightDirective,
   ],
   imports: [
     BrowserModule,

@@ -70,9 +70,11 @@
         <div class="borders">
           <app-button
             (click)="onHandleBorderClick(code)"
-            *ngFor="let code of country?.borders"
+            *ngFor="let code of country?.borders; index as i"
             [content]="code"
             [classes]="'border'"
+            moveRight
+            class="hide"
           ></app-button>
         </div>
       </div>
