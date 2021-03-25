@@ -1,3 +1,8 @@
+// type definitions for Cypress object "cy"
+// triple-slash directive For active ""IntelliSense"" cypress method
+// there is other way in this link,
+// look documintation https://docs.cypress.io/guides/tooling/IDE-integration#Set-up-in-your-Dev-Environment
+/// <reference types="cypress" />
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
