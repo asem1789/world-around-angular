@@ -1,0 +1,37 @@
+<app-wrapper-pages>
+  <div class="card-log">
+    <h2 class="log-title">Sign up</h2>
+
+    <app-input
+      (input)="onChange($event)"
+      [name]="'email'"
+      [placeholder]="'email'"
+    ></app-input>
+    <app-input
+      (input)="onChange($event)"
+      [name]="'password'"
+      [type]="'password'"
+      [placeholder]="'password'"
+    ></app-input>
+    <app-input
+      (input)="onChange($event)"
+      [name]="'confirmPassword'"
+      [type]="'password'"
+      [placeholder]="'confirm password'"
+    ></app-input>
+    <button class="card-submit" type="submit">Sign Up</button>
+    <div class="log-service">
+      <h4 class="service-title hr-line">
+        <span>Or Sign Up With</span>
+      </h4>
+      <button class="btn-icon">
+        <mat-icon svgIcon="google-colored"></mat-icon>
+      </button>
+    </div>
+    <span class="line"></span>
+    <div class="sign-link">
+      Already have an account?
+      <a href="/login">Login here</a>
+    </div>
+  </div>
+</app-wrapper-pages>

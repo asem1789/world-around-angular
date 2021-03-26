@@ -23,8 +23,33 @@
   text-decoration: none;
 }
 
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.btn-account {
+  height: 30px;
+  border: none;
+  background: none;
+  margin-left: 50px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: var(--forground-primary);
+}
 
+.account-icon {
+  font-size: 30px;
+  margin-right: 10px;
+  color: var(--forground-primary);
+}
 
-
-
+.nav-btn-icon {
+  color: var(--forground-primary);
+}

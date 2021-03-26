@@ -1,2 +1,10 @@
-<input  (input)="onChangeInput($event.target)"class="input-search" type="text" placeholder="search for a country..." />
-<mat-icon class="icon-search">search</mat-icon>
+<div class="form_group">
+  <input
+    (input)="onChangeInput($event.target)"
+    [ngClass]="{ 'input-search': true, 'padding-left': icon }"
+    type="{{ type }}"
+    placeholder="{{ placeholder }}"
+    name="{{ name }}"
+  />
+  <mat-icon *ngIf="icon" class="icon-search">{{ icon }}</mat-icon>
+</div>
