@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -6,6 +6,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input.component.css'],
 })
 export class InputComponent implements OnInit {
+  @Input() icon: string | null = null;
+  @Input() placeholder: string = '';
+  @Input() type: string = 'text';
+  @Input() name: string = '';
   @Output() searchInput = new EventEmitter<string>();
 
   constructor() {}
