@@ -1,28 +1,33 @@
 .mode-btn {
-  border-radius: 50px;
+  border-radius: 15px;
   border: 1px solid transparent;
   background: 0;
   cursor: pointer;
-  width: 80px;
-  height: 40px;
+  width: 50px;
+  height: 25px;
   position: relative;
   outline: none;
   overflow: hidden;
-  box-shadow: 0 0 5px var(--shadow-icon);
+}
+.icon-mode {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
 }
 
 .border-dark {
-  border: 2px solid #212e37;
+  box-shadow: 0 0 5px #212e37;
 }
 
 .border-light {
-  border: 2px solid #fff;
+  box-shadow: 0 0 5px #fff;
 }
 
 .icon-box {
   position: absolute;
-  width: 34px;
-  height: 34px;
+  width: 18px;
+  height: 18px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 22px;
@@ -36,12 +41,12 @@
 
 .icon-box-sun {
   transition: all 3.9s;
-  left: 2px;
+  left: 6px;
 }
 
 .icon-box-moon {
   transition: all 3.9s;
-  right: 2px;
+  right: -2px;
 }
 
 .icon-sun {
@@ -62,9 +67,9 @@
 
 .bg-icon {
   position: absolute;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 15px;
   top: 50%;
   transform: translateY(-50%);
 }
