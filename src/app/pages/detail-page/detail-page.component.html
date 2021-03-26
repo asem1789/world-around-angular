@@ -1,90 +1,87 @@
-<div
-  class="detail-page max-row"
-  ngClass.xs="padding-x-1"
-  ngClass.sm="padding-x-2"
-  ngClass.gt-sm="padding-x-3"
->
-  <div class="detail-header">
-    <app-button
-      [content]="'Back'"
-      [icon]="'keyboard_backspace'"
-      [isBack]="true"
-      [classes]="'back'"
-    ></app-button>
-  </div>
-  <div *ngIf="!loading && !error" class="detail-content">
-    <div moveDown class="detail-flag-box">
-      <img
-        down-hide
-        class="flag"
-        src="{{ country?.flag }}"
-        alt="flag country"
-      />
+<app-wrapper-pages>
+  <div class="detail-page">
+    <div class="detail-header">
+      <app-button
+        [content]="'Back'"
+        [icon]="'keyboard_backspace'"
+        [isBack]="true"
+        [classes]="'back'"
+      ></app-button>
     </div>
-    <div class="detail-info">
-      <h2 *ngIf="!isSpam" class="detail-title">{{ country?.name }}</h2>
-      <h2 *ngIf="isSpam" class="detail-title">{{ country?.correctName }}</h2>
-      <div class="info-pal" *ngIf="isSpam">
-        <h3 class="info-pal-title">
-          the original Country is: <span>Palestine</span>
-        </h3>
-        <a class="btn-pal" [routerLink]="['/countries/Palestine/detail']"
-          >Info About Palestine</a
-        >
+    <div *ngIf="!loading && !error" class="detail-content">
+      <div moveDown class="detail-flag-box">
+        <img
+          down-hide
+          class="flag"
+          src="{{ country?.flag }}"
+          alt="flag country"
+        />
       </div>
-      <div *ngIf="!isSpam" class="lists">
-        <ul class="list list-right">
-          <li class="item-info">
-            <span class="sub-title">Native Name:</span>
-            {{ country?.nativeName }}
-          </li>
-          <li class="item-info">
-            <span class="sub-title">Capital:</span>
-            {{ country?.capital }}
-          </li>
-          <li class="item-info">
-            <span class="sub-title">Region:</span>
-            {{ country?.region }}
-          </li>
-          <li class="item-info">
-            <span class="sub-title">Sub Region:</span>
-            {{ country?.subregion }}
-          </li>
-          <li class="item-info">
-            <span class="sub-title">capital:</span>
-            {{ country?.capital }}
-          </li>
-        </ul>
-        <ul class="list list-left">
-          <li class="item-info">
-            <span class="sub-title">Top Level Domain:</span>
-            {{ country?.topLevelDomain }}
-          </li>
-          <li class="item-info">
-            <span class="sub-title">Currencies:</span>
-            {{ country?.currencies }}
-          </li>
-          <li class="item-info">
-            <span class="sub-title">Languages:</span>
-            {{ country?.languages }}
-          </li>
-        </ul>
-      </div>
-      <div *ngIf="borders.length >= 1" class="detail-footer">
-        <h3 class="footer-title">Borders</h3>
-        <div class="borders">
-          <app-button
-            (click)="onHandleBorderClick(code)"
-            *ngFor="let code of country?.borders; index as i"
-            [content]="code"
-            [classes]="'border'"
-            moveRight
-            class="hide"
-          ></app-button>
+      <div class="detail-info">
+        <h2 *ngIf="!isSpam" class="detail-title">{{ country?.name }}</h2>
+        <h2 *ngIf="isSpam" class="detail-title">{{ country?.correctName }}</h2>
+        <div class="info-pal" *ngIf="isSpam">
+          <h3 class="info-pal-title">
+            the original Country is: <span>Palestine</span>
+          </h3>
+          <a class="btn-pal" [routerLink]="['/countries/Palestine/detail']"
+            >Info About Palestine</a
+          >
+        </div>
+        <div *ngIf="!isSpam" class="lists">
+          <ul class="list list-right">
+            <li class="item-info">
+              <span class="sub-title">Native Name:</span>
+              {{ country?.nativeName }}
+            </li>
+            <li class="item-info">
+              <span class="sub-title">Capital:</span>
+              {{ country?.capital }}
+            </li>
+            <li class="item-info">
+              <span class="sub-title">Region:</span>
+              {{ country?.region }}
+            </li>
+            <li class="item-info">
+              <span class="sub-title">Sub Region:</span>
+              {{ country?.subregion }}
+            </li>
+            <li class="item-info">
+              <span class="sub-title">capital:</span>
+              {{ country?.capital }}
+            </li>
+          </ul>
+          <ul class="list list-left">
+            <li class="item-info">
+              <span class="sub-title">Top Level Domain:</span>
+              {{ country?.topLevelDomain }}
+            </li>
+            <li class="item-info">
+              <span class="sub-title">Currencies:</span>
+              {{ country?.currencies }}
+            </li>
+            <li class="item-info">
+              <span class="sub-title">Languages:</span>
+              {{ country?.languages }}
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="borders.length >= 1" class="detail-footer">
+          <h3 class="footer-title">Borders</h3>
+          <div class="borders">
+            <app-button
+              (click)="onHandleBorderClick(code)"
+              *ngFor="let code of country?.borders; index as i"
+              [content]="code"
+              [classes]="'border'"
+              moveRight
+              class="hide"
+            ></app-button>
+          </div>
         </div>
       </div>
     </div>
+    <p *ngIf="error" class="message">{{ error }}</p>
+    <mat-spinner *ngIf="loading" strokeWidth="4"></mat-spinner>
   </div>
-  <p *ngIf="error" class="message">{{ error }}</p>
-  <mat-spinner *ngIf="loading" strokeWidth="4"></mat-spinner>
-</div>
+</app-wrapper-pages>
