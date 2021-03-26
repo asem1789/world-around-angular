@@ -24,6 +24,9 @@ import { ButtonComponent } from './components/button/button.component';
 import { DetailPageComponent } from './pages/detail-page/detail-page.component';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './pages/not-found-page/not-found.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { WrapperPagesComponent } from './components/wrapper-pages/wrapper-pages.component';
+import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { NotFoundComponent } from './pages/not-found-page/not-found.component';
     NotFoundComponent,
     MoveRightDirective,
     MoveDownDirective,
+    LoginPageComponent,
+    WrapperPagesComponent,
+    SignupPageComponent,
   ],
   imports: [
     BrowserModule,

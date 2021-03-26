@@ -13,6 +13,7 @@
   --color-spinner: #2c3e50;
 
   --color-info: #17a2b8;
+  --color-link: rgb(85, 26, 139);
 
   --shadow-icon: rgba(0, 0, 0, 0.5);
 }
@@ -30,6 +31,7 @@
   --color-spinner: #ffffff;
 
   --color-info: #ffffff;
+  --color-link: #ff0000;
 
   --shadow-icon: hsla(0, 0%, 100%, 0.836);
 }
@@ -306,4 +308,101 @@ app-card-country:hover .img {
   .flag {
     height: 150px !important;
   }
+}
+
+/* --------------------------------------------- */
+/* Signin & signUp Component */
+/* --------------------------------------------- */
+.card-log {
+  background-color: var(--background-primary);
+  min-height: 200px;
+  padding: 4rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.log-title {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--forground-primary);
+  text-align: left;
+}
+
+.card-submit {
+  border: 1xp solid currentColor;
+  padding: 0 10px;
+  background-color: none;
+  border: 1px solid gray;
+  background-color: transparent;
+  color: var(--forground-primary);
+  border-radius: 3px;
+  font-size: 1.5rem;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.log-service {
+  margin: 40px 0;
+}
+
+.service-title {
+  color: var(--forground-secondary);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.service-title > span {
+  background: var(--background-primary);
+  color: var(--forground-secondary);
+  position: relative;
+  z-index: 2;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hr-line {
+  position: relative;
+}
+
+.hr-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border: 0.3px solid var(--forground-secondary);
+  width: 100%;
+  z-index: 1;
+}
+
+.btn-icon {
+  background-color: var(--background-primary);
+  border: 1px solid #c4c4c4;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign-link {
+  font-size: 15px;
+  color: var(--forground-primary);
+  margin-top: 30px;
+}
+
+.sign-link > a {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+.line {
+  border: 0.1px dotted rgb(190, 190, 190);
+  width: 80%;
+  display: inline-block;
 }
