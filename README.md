@@ -68,7 +68,7 @@ Or
 ```
 
 
-![integration tests11](https://user-images.githubusercontent.com/40121654/112723457-a16d8700-8f1f-11eb-96b0-57ac89c17c2f.jpg width="200" height="150")
+![integration tests11](https://user-images.githubusercontent.com/40121654/112723457-a16d8700-8f1f-11eb-96b0-57ac89c17c2f.jpg)
 
 
 <hr>
